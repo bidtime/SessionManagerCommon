@@ -31,6 +31,11 @@ public class CookieUtils {
 	}
 
 	public static void addCookie(HttpServletResponse response, String name,
+			String value) {
+		addCookie(response, name, value, 0);
+	}
+	
+	public static void addCookie(HttpServletResponse response, String name,
 			String value, int v, EnumAge e) {
 		Cookie cookie = new Cookie(name, value);
 		cookie.setPath("/");
@@ -47,17 +52,6 @@ public class CookieUtils {
 			} else if (e == EnumAge.SECOND) {
 				maxAge = v;
 			}
-			cookie.setMaxAge(maxAge);
-		}
-		response.addCookie(cookie);
-	}
-
-	public static void addCookieHour(HttpServletResponse response, String name,
-			String value, short day) {
-		Cookie cookie = new Cookie(name, value);
-		cookie.setPath("/");
-		if (day > 0) {
-			int maxAge = day * 24 * 60 * 60;
 			cookie.setMaxAge(maxAge);
 		}
 		response.addCookie(cookie);
