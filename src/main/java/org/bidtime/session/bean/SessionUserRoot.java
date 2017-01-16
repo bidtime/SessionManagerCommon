@@ -1,8 +1,7 @@
 package org.bidtime.session.bean;
 
+@SuppressWarnings("serial")
 public class SessionUserRoot extends SessionUserBase {
-	
-	private static final long serialVersionUID = 1L;
 
 	// 实现此抽象方法
 	@Override
@@ -15,4 +14,5 @@ public class SessionUserRoot extends SessionUserBase {
 	public String getName() {
 		return null;
 	}
+	
 }
