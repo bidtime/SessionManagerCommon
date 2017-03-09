@@ -36,20 +36,20 @@ public class CookieUtils {
 	}
 	
 	public static void addCookie(HttpServletResponse response, String name,
-			String value, int v, EnumAge e) {
+			String value, int v, EnumTime e) {
 		Cookie cookie = new Cookie(name, value);
 		cookie.setPath("/");
 		if (v > 0) {
 			int maxAge = 0;
-			if (e == EnumAge.WEEK) {
+			if (e == EnumTime.WEEK) {
 				maxAge = v * 7 * 24 * 60 * 60;
-			} else if (e == EnumAge.DAY) {
+			} else if (e == EnumTime.DAY) {
 				maxAge = v * 24 * 60 * 60;
-			} else if (e == EnumAge.HOUR) {
+			} else if (e == EnumTime.HOUR) {
 				maxAge = v * 60 * 60;
-			} else if (e == EnumAge.MINUTE) {
+			} else if (e == EnumTime.MINUTE) {
 				maxAge = v * 60;
-			} else if (e == EnumAge.SECOND) {
+			} else if (e == EnumTime.SECOND) {
 				maxAge = v;
 			}
 			cookie.setMaxAge(maxAge);

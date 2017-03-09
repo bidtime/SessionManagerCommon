@@ -28,4 +28,5 @@ public class SessionState {
 		this.sessionUser = sessionUser;
 		this.loginState = state;
 	}
+	
 }
