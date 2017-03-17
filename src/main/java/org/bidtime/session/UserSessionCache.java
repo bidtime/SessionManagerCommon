@@ -8,7 +8,6 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.bidtime.session.bean.SessionUserBase;
-import org.bidtime.session.utils.RequestSessionUtils;
 
 /**
  * @author Administrator
@@ -34,14 +33,6 @@ public class UserSessionCache {
 	
 	public UserSessionCache(boolean singleLogin) {
 		this.singleLogin = singleLogin;;
-	}
-	
-	public String getSessionId(HttpServletRequest req, boolean newSession) {
-		return RequestSessionUtils.getSessionId(req, newSession);
-	}
-
-	public String getSessionId(HttpServletRequest req) {
-		return RequestSessionUtils.getSessionId(req);
 	}
 	
 	public SessionLoginState getSessionLoginState(HttpServletRequest request) {
