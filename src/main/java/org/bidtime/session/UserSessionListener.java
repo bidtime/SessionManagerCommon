@@ -9,7 +9,6 @@ import javax.servlet.http.HttpSessionListener;
 
 import org.apache.log4j.Logger;
 
-//public class UserSessionListener {
 public class UserSessionListener implements HttpSessionListener {
 
 	private static final Logger logger = Logger
@@ -58,16 +57,15 @@ public class UserSessionListener implements HttpSessionListener {
 
 	private static void sessionRemove(HttpSession session) {
 		if (session != null) {
-			String userId = UserSessionCommon.user_getIdOfHttpSession(session, null);
+			String userId = UserSessionCommon.getUserId(session, null);
 			if (userId != null) {
 				try {
-					UserSessionCommon.httpSession_destroyAttr(session);
+					UserSessionCommon.session_destroy(session);
 				} finally {
 					user_map.remove(userId);
 				}
 			}
 		}
-		// OnlineCounter.reduce(hse.getSession());
 	}
 
 	/*
