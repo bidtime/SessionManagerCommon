@@ -57,7 +57,7 @@ public class UserSessionListener implements HttpSessionListener {
 
 	private static void sessionRemove(HttpSession session) {
 		if (session != null) {
-			String userId = UserSessionCommon.getUserId(session, null);
+			String userId = UserSessionCommon.getUserIdString(session);
 			if (userId != null) {
 				try {
 					UserSessionCommon.session_destroy(session);
