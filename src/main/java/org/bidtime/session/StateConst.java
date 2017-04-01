@@ -9,7 +9,7 @@ public class StateConst {
 	public static final int NO_PERMISSION = 3;
 	public static final int TOKEN_RELOGIN = 4;
 	
-	public static final int STATE_NOT_LOGIN = 1000;
-	public static final int STATE_ANOTHER_LOGIN = 1001;
+	public static final int STATE_NOT_LOGIN = 490;		// http status code -> not login
+	public static final int STATE_ANOTHER_LOGIN = 491;	// http status code -> another login
 	
 }
