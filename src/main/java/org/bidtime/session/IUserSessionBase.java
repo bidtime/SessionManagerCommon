@@ -18,9 +18,11 @@ public interface IUserSessionBase {
 	
 	public SessionLoginState getSessionLoginState(HttpServletRequest request);
 	
+	// public SessionLoginState getSessionLoginState(HttpServletRequest request, boolean cache);
+	
 	public SessionUserBase getUser(HttpServletRequest request);
 
-	public SessionUserBase getUser(HttpServletRequest request, boolean force);
+	// public SessionUserBase getUser(HttpServletRequest request, boolean cache);
 	
 //	public Long getUserId(HttpServletRequest request, boolean force);
 
