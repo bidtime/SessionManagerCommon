@@ -33,12 +33,6 @@
 	<dependencies>
 		
 		<dependency>
-			<groupId>org.bidtime.utils</groupId>
-			<artifactId>cache-manager</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-
-		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
 			<version>${commons-lang.version}</version>
