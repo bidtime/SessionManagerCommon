@@ -34,7 +34,7 @@ public class SessionCommon {
 	}
 
 	// isDoubleOnLine
-	private boolean isDoubleOnLine(HttpSession session) {
+	private static boolean isDoubleOnLine(HttpSession session) {
 		Object value = session.getAttribute(DOUBLE_USER_ONLINE);
 		if (value != null) {
 			return true;
@@ -44,7 +44,7 @@ public class SessionCommon {
 	}
 
 	// user2DoubleOnLine
-	protected boolean user2DoubleOnLine(HttpSession session, SessionUserBase u) {
+	protected static boolean user2DoubleOnLine(HttpSession session, SessionUserBase u) {
 		if (session != null) {
 			//将当前的session,赋值 User
 			session.setAttribute(USER_SESSION_INFO, u);
@@ -67,7 +67,7 @@ public class SessionCommon {
 	}
 	
 	// getSessionLoginState
-	protected SessionLoginState getSessionLoginState(HttpSession session) {
+	protected static SessionLoginState getSessionLoginState(HttpSession session) {
 		if (session != null) {
 			int loginState = StateConst.NOT_LOGIN;	//未登陆
 			SessionUserBase u = getUser(session);
@@ -143,7 +143,7 @@ public class SessionCommon {
 	}
 	
 	// set
-	protected void set(HttpSession session, String ext, Object value) {
+	protected static void set(HttpSession session, String ext, Object value) {
 		if (session != null) {
 			session.setAttribute(ext, value);
 		}
